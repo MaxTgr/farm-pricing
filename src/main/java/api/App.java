@@ -11,14 +11,7 @@ import java.net.URISyntaxException;
 public class App {
 
     public static void main(String[] args) {
-        //SpringApplication.run(App.class, args);
-        try {
-            CSVLoader.getFazendas();
-        } catch (IOException e) {
-            System.out.println(e);
-        } catch (URISyntaxException e){
-            System.out.println(e);
-        }
+        SpringApplication.run(App.class, args);
     }
 
 }

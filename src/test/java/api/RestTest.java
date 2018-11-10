@@ -22,6 +22,8 @@ public class RestTest {
     @Autowired
     private MockMvc mvc;
 
+    // TODO: UPDATE TESTS
+
     @Test
     public void getIndex() throws Exception {
         mvc.perform(MockMvcRequestBuilders.get("/").accept(MediaType.APPLICATION_JSON))
