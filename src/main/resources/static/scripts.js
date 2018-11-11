@@ -9,7 +9,7 @@ function loadMap() {
         attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
         maxZoom: 12,
         id: 'mapbox.streets',
-        accessToken: 'pk.eyJ1IjoibWF4dGdyIiwiYSI6ImNqb2QwODVnbDB5emUza3J3dG84enk2Y2IifQ.bSqAHlt2abRXv-s0Lfbe_A'
+        accessToken: 'API_KEY'
     }).addTo(mymap);
 }
 
