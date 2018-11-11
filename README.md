@@ -11,7 +11,10 @@ A coding challenge by [ProdutorAgro](https://www.linkedin.com/company/produtor-a
 - [Turf.js](http://turfjs.org/) Geospatial analysis library used for data manipulation using geoJSONs
 
 # Running
-First be sure to build and run all the tests with
+First you must put a __leaflet api_key__ in __line 12__ of the [scripts file](./src/main/resources/static/scripts.js#L12)
+`/src/main/resources/static/scripts.js` 
+
+Then be sure to build and run all the tests with
 
 `gradlew build`
 
