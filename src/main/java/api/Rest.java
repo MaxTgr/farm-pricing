@@ -1,9 +1,7 @@
 package api;
 
-import com.fasterxml.jackson.databind.util.JSONPObject;
 import database.CSVLoader;
 import model.Fazenda;
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,7 +15,7 @@ import java.util.List;
 public class Rest {
 
     @RequestMapping(value = "/", produces = "application/json")
-    public String index(){
+    public String index() {
 
         List<Fazenda> fazendas = new ArrayList<>();
 
@@ -37,7 +35,7 @@ public class Rest {
                 obj.put("geoJSON", new JSONObject(fazenda.getGeoJSON()));
                 json.put(fazenda.getId(), obj);
             }
-        } catch (JSONException e){
+        } catch (JSONException e) {
             System.out.println(e); //TODO: better exception handler
         }
 
