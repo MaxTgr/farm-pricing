@@ -1,16 +1,13 @@
 package model;
 
-import org.json.JSONException;
-import org.json.JSONObject;
-
-public class Fazenda{
+public class Fazenda {
 
     private String mId;
     private String mFazenda;
     private String mAgricultor;
     private String mGeoJSON;
 
-    public Fazenda(String id,String fazenda,String agricultor,String geoGson){
+    public Fazenda(String id, String fazenda, String agricultor, String geoGson) {
         mId = id;
         mFazenda = fazenda;
         mAgricultor = agricultor;
