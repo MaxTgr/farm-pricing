@@ -15,7 +15,7 @@ public class Rest {
     @RequestMapping(value = "/servicos", produces = "application/json")
     public String servicos() {
 
-        return Formatter.getServicosJson().toString(); // TODO: change for services
+        return Formatter.getServicosJson().toString();
     }
 
 }
