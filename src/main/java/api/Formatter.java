@@ -21,7 +21,7 @@ public class Formatter {
         try {
             fazendas = CSVLoader.getFazendas();
         } catch (IOException e) {
-            System.out.println(e); //TODO: better exception handler
+            System.out.println(e);
         }
 
         JSONArray json = new JSONArray();
@@ -39,7 +39,7 @@ public class Formatter {
                 json.put(obj);
             }
         } catch (JSONException e){
-            System.out.println(e); //TODO: better exception handler
+            System.out.println(e);
         }
 
         return json;
@@ -52,7 +52,7 @@ public class Formatter {
         try {
             servicos = CSVLoader.getServicos();
         } catch (IOException e) {
-            System.out.println(e); //TODO: better exception handler
+            System.out.println(e); 
         }
 
         JSONArray json = new JSONArray();
@@ -67,7 +67,7 @@ public class Formatter {
                 json.put(obj);
             }
         } catch (JSONException e){
-            System.out.println(e); //TODO: better exception handler
+            System.out.println(e); 
         }
 
         return json;
