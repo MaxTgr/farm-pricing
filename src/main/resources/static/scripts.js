@@ -9,7 +9,7 @@ function loadMap() {
         attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
         maxZoom: 12,
         id: 'mapbox.streets',
-        accessToken: 'API_KEY'
+        accessToken: 'pk.eyJ1IjoibWF4dGdyIiwiYSI6ImNqb2QwODVnbDB5emUza3J3dG84enk2Y2IifQ.bSqAHlt2abRXv-s0Lfbe_A'
     }).addTo(mymap);
 }
 
@@ -37,6 +37,7 @@ function drawPolygon(json) {
     for(let i = 0; i < json.length; i++){
         const polygonObj = L.geoJson(json[i].geoJSON).addTo(mymap);
         polys.push( { // creating a object for easy distinction and info gathering
+            name: json[i].fazenda, // name to be displayed in the popup
             quality: 0, // Soil quality analysis
             bugs: 0, // Pest Counting
             geoJSON: json[i].geoJSON, // GeoJSON for analysis point testing + area sum
@@ -95,21 +96,17 @@ function calculatePrice(){
 
         // calculating per area fee/discount
         var areaMultiplier;
-        var size; // getting the "size" for displaying in the map
         console.log(areaHa + "," + (areaHa < 1000));
         if (areaHa < 50) {
             areaMultiplier = 1.25;
-            size = "Fazenda Pequena";
         } else if(areaHa < 1000) {
             areaMultiplier = 1.15;
-            size = "Fazenda Media";
         }else{
             areaMultiplier = 1.02;
-            size = "Fazenda Grande";
         }
         sum += (areaHa * areaMultiplier); // per ha fee
 
-        polys[p].polygon.bindPopup(`${size}<br/>R$${sum.toFixed(2)}`); // uses html syntax
+        polys[p].polygon.bindPopup(`${polys[p].name}<br/><br/>R$${sum.toFixed(2)}`); // uses html syntax
         // return example: 
         // Fazenda Grande
         // R$ 7362.73
